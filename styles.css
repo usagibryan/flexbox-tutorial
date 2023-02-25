@@ -9,23 +9,25 @@
   background-color: #5995DA;
   /* Blue */
   padding: 20px 0;
-  display: flex;
-  justify-content: center;
+  display: flex; /* declares this container will use flex rules instead of the default box model */
+  justify-content: center; /* use to define the horizontal alignment of items */
 }
 
 .menu {
+  /*border: 1px solid #fff;  /* toggle on for debugging */
   width: 900px;
   display: flex;
-  justify-content: space-between;
+  justify-content: space-between; /* distributes extra space equally between all items */
 }
 
 .links {
+  /*border: 1px solid #fff;  /* for debugging */
   display: flex;
-  justify-content: flex-end;
+  justify-content: flex-end; /* pushes items to the end of its container, right for rows and bottom for columns; the opposite is flex-start (left/top) */
 }
 
 .signup {
-  margin-left: auto;
+  margin-left: auto;  /* auto-margins use up all the extra space in a flex container, basically a shortcut to moving things to the left or right without the need for an extra container in the HTML */
 }
 
 .login {
@@ -44,7 +46,7 @@
   height: 300px;
   display: flex;
   justify-content: space-between;
-  align-items: center;
+  align-items: center; /* use to define the vertical alignment of items */
 }
 
 .photo-grid-container {
@@ -56,19 +58,19 @@
   width: 900px;
   display: flex;
   justify-content: center;
-  flex-wrap: wrap;
-  flex-direction: row;  /* <--- Really freaking cool! */
+  flex-wrap: wrap; /*forces overflow onto the next line */
+  flex-direction: row; /* can be row (default) or column, or a row-reverse or column-reverse to reverse the order */
   align-items: center;
 }
 
 .photo-grid-item {
-  border: 1px solid #fff;
+  /*border: 1px solid #fff;  /* for debugging */
   width: 300px;
   height: 300px;
 }
 
 .first-item {
-  order: 1;
+  order: 1; /* order can be used to customize the order of individual items */
 }
 
 .last-item {
@@ -77,7 +79,7 @@
 
 .social,
 .subscribe {
-  align-self: flex-end;
+  align-self: flex-end; /* overrides the align-items value from its container, vertically aligns individual items */
   margin-bottom: 20px;
 }
 
@@ -90,16 +92,16 @@
   border: 1px solid #fff;
   background-color: #D6E9FE;
   height: 200px;
-  flex: 1;
+  flex: 1; /* tells the items to stretch to match the width of its container, use to create flexible foxes that can stretch and shrink */
 }
 
 .footer-three {
-  flex: 2;
+  flex: 2; /* tells this item to grow twice as big as the others */
 }
 
 .footer-one,
 .footer-three {
   background-color: #5995DA;
-  flex: initial;
+  flex: initial; /* without this line the below width declaration would be ignored as flex: 1 would be inherited instead */
   width: 300px;
 }
